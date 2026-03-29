@@ -11,6 +11,7 @@ const navLinks = [
   { href: "/", label: "Overview" },
   { href: "/rankings", label: "Rankings" },
   { href: "/by-type", label: "By Type" },
+  { href: "/solana-etfs", label: "Solana ETFs" },
 ];
 
 export default function RootLayout({
@@ -46,7 +47,7 @@ export default function RootLayout({
           {children}
         </main>
         <footer className="border-t border-card-border py-4 text-center text-xs text-muted">
-          Data from CoinGecko &amp; DeFiLlama. Updated daily.
+          Stablecoin data from CoinGecko &amp; DeFiLlama. ETF data from Yahoo Finance &amp; issuer sites.
         </footer>
       </body>
     </html>

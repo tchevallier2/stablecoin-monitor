@@ -21,7 +21,12 @@
       "Bash(ls:*)",
       "Bash(npx next:*)",
       "Bash(npm run:*)",
-      "Bash(gh auth:*)"
+      "Bash(gh auth:*)",
+      "Bash(gh repo:*)",
+      "Bash(gh secret:*)",
+      "Bash(npx vercel:*)",
+      "Bash(gh api:*)",
+      "Bash(supabase --version)"
     ]
   }
 }
