@@ -1,0 +1,27 @@
+{
+  "permissions": {
+    "allow": [
+      "Read(//c/Users/cheva/Tigrane2/**)",
+      "Bash(git -C \"C:/Users/cheva/Tigrane2\" remote -v)",
+      "Bash(git -C \"C:/Users/cheva/Tigrane2\" log --oneline -10)",
+      "Bash(git -C \"C:/Users/cheva/Tigrane2\" status)",
+      "Bash(find C:/Users/cheva/OneDrive/Desktop/v0-crypto-vc-dashboard-u0 -type f -name *.js -o -name *.csv -o -name *.json)",
+      "Bash(find C:/Users/cheva -type f -name *.csv)",
+      "Bash(find C:/Users/cheva/Documents -type f -name *.py -o -name *.js)",
+      "Bash(grep -E \"\\\\.py$|stablecoin|crypto\")",
+      "Bash(find C:/Users/cheva -path *Tigrane* -type f)",
+      "Bash(pip install:*)",
+      "Bash(python:*)",
+      "Bash(npm install:*)",
+      "Bash(node -e \"import { z } from ''''zod''''; console.log\\(''''zod version:'''', z.string\\(\\).describe\\(''''test''''\\)._def\\)\")",
+      "Bash(node -e \":*)",
+      "Bash(npx create-next-app@latest web --typescript --tailwind --eslint --app --src-dir --no-import-alias --use-npm)",
+      "Bash(npx create-next-app@latest web --typescript --tailwind --eslint --app --src-dir --no-import-alias --use-npm --no-turbopack)",
+      "Bash(yes \"No\")",
+      "Bash(ls:*)",
+      "Bash(npx next:*)",
+      "Bash(npm run:*)",
+      "Bash(gh auth:*)"
+    ]
+  }
+}

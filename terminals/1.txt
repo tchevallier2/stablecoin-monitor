@@ -1,0 +1,80 @@
+---
+pid: 23560
+cwd: |
+  C:\Users\cheva\Tigrane2
+---
+          
+      1287 +  flex-shrink: 0;                                                                                                                              
+      1288 +}                                                                                                                                              
+      1289 +                                                                                                                                               
+      1290 +.type-group-mcap {                                                                                                                             
+      1291 +  font-size: 20px;                                                                                                                             
+      1292 +  font-weight: 700;                                                                                                                            
+      1293 +  color: var(--accent);                                                                                                                        
+      1294 +}                                                                                                                                              
+      1295 +                                                                                                                                               
+      1296 +.type-group-count {                                                                                                                            
+      1297 +  font-size: 12px;                                                                                                                             
+      1298 +  color: var(--text-muted);                                                                                                                    
+      1299 +  margin-top: 2px;                                                                                                                             
+      1300 +}                                                                                                                                              
+      1301 +                                                                                                                                               
+      1302 +@media (max-width: 600px) {                                                                                                                    
+      1303 +  .type-group-header {                                                                                                                         
+      1304 +    flex-direction: column;                                                                                                                    
+      1305 +  }                                                                                                                                            
+      1306 +  .type-group-stats {                                                                                                                          
+      1307 +    text-align: left;                                                                                                                          
+      1308 +  }                                                                                                                                            
+      1309 +}                                                                                                                                              
+
+● Now let's commit and push.
+
+● Bash(git -C /c/Users/cheva/Tigrane2 add index.html app.js styles.css && git -C /c/Users/cheva/Tigrane2 commit -m "$(cat <<'EOF'
+      feat: add Stablecoins by Type view wi…)
+  ⎿  [main d4cdbc7] feat: add Stablecoins by Type view with three grouped tables
+      3 files changed, 194 insertions(+), 2 deletions(-)
+     To https://github.com/tchevallier2/Test-Stablecoins-1.git
+        21c4762..d4cdbc7  main -> main
+
+● Done and pushed. Here's what was added:
+
+  New "Stablecoins by Type" tab with 3 grouped tables:
+
+  ┌───────────────────────┬───────────────────────────────────────────────────────┐
+  │         Group         │                        Matches                        │
+  ├───────────────────────┼───────────────────────────────────────────────────────┤
+  │ Payment Stablecoins   │ Fiat-backed, Yield-bearing, RWA-backed                │
+  ├───────────────────────┼───────────────────────────────────────────────────────┤
+  │ Crypto-Collateralized │ Crypto-collateralized, Synthetic, Algorithmic, Hybrid │
+  ├───────────────────────┼───────────────────────────────────────────────────────┤
+  │ Commodity-Backed      │ Commodity-backed                                      │
+  └───────────────────────┴───────────────────────────────────────────────────────┘
+
+  Each table has: #, Ticker, Name, Issuer, Peg, Asset Manager, Custodian, Market Cap, % Share — no Type column. Each section also shows the total market   
+  cap and stablecoin count for that category. Clicking any row opens the detail modal, same as the other views.
+
+✻ Crunched for 2m 1s
+
+❯ can you show me a preview of what it looks like
+
+● Bash(gh api repos/tchevallier2/Test-Stablecoins-1/pages --jq '.html_url')
+  ⎿  https://tchevallier2.github.io/Test-Stablecoins-1/
+
+● I can't open a browser or take screenshots from here. Your live site is at:
+
+  https://tchevallier2.github.io/Test-Stablecoins-1/
+
+  The pages deployment triggered automatically when we pushed — it should be live within a minute or two. Open that URL and click the "Stablecoins by Type"
+   tab to see the new view.
+
+  If anything looks off visually, describe it and I'll fix it.
+
+───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────── ▪▪▪ ─
+❯  
+ *  History restored ──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+  ⏵⏵ accept edits on (shift+tab to cycle)
+(base) PS C:\Users\cheva\Tigrane2> 
+ *  History restored 
+
+(base) PS C:\Users\cheva\Tigrane2>
