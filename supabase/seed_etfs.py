@@ -18,7 +18,7 @@ SUPABASE_KEY = os.environ["SUPABASE_SERVICE_ROLE_KEY"]
 
 supabase = create_client(SUPABASE_URL, SUPABASE_KEY)
 
-# ── Live ETFs (data sourced from issuer sites, Mar 28 2026) ──────────
+# ── Live ETFs (data sourced from issuer sites, Mar 30 2026) ──────────
 
 ETFS = [
     {
@@ -93,13 +93,13 @@ ETFS = [
         "exp_waiver_note": "Waiver expired Feb 17, 2026",
         "fee_waived": False,
         "staking_enabled": True,
-        "commission_current": "N/A",
-        "commission_target": "N/A",
-        "commission_note": "Not separately disclosed; reflected in NAV",
+        "commission_current": "0.28%",
+        "commission_target": "0.28%",
+        "commission_note": "SOL Strategies (Orangefin validator) 0.28% staking provider fee; waived through Feb 17, 2026",
         "pct_staked": "N/A",
         "gross_yield": "6.03%",
         "net_yield": "N/A",
-        "description": "Uses SOL Strategies as staking provider. Staking rewards reflected in share price. Commission not separately disclosed.",
+        "description": "Uses SOL Strategies as staking provider. Staking rewards reflected in share price. 0.28% staking provider fee (resumed Feb 17, 2026).",
     },
     {
         "ticker": "TSOL",
@@ -141,6 +141,26 @@ ETFS = [
         "net_yield": "N/A",
         "description": "Smallest by AUM. Partners with Marinade Finance for liquid staking. Highest expense ratio of the group.",
     },
+    {
+        "ticker": "SOEZ",
+        "issuer": "Franklin Templeton",
+        "exchange": "NYSE Arca",
+        "aum_usd": 10_294_000,
+        "price_usd": 13.84,
+        "price_source": "static",
+        "exp_ratio_current": "0% (waived)",
+        "exp_ratio_target": "0.19%",
+        "exp_waiver_note": "Fee waived through May 31, 2026 (or $5B AUM, whichever first)",
+        "fee_waived": True,
+        "staking_enabled": True,
+        "commission_current": "N/A",
+        "commission_target": "N/A",
+        "commission_note": "Not separately disclosed; staking rewards reported net of validator/staking fees",
+        "pct_staked": "N/A",
+        "gross_yield": "~7.0%",
+        "net_yield": "~7.0%",
+        "description": "Launched Dec 3, 2025. Management fee waived through May 31, 2026 or $5B AUM. Up to 100% of SOL staked; rewards reinvested into NAV. Commission not separately disclosed. Custodian: Coinbase (SOL) / BNY Mellon (cash).",
+    },
 ]
 
 # ── Upcoming / pending filings ───────────────────────────────────────
@@ -149,13 +169,13 @@ FILINGS = [
     {
         "issuer": "Franklin Templeton",
         "etf_name": "Franklin Solana ETF",
-        "ticker_proposed": None,
+        "ticker_proposed": "SOEZ",
         "filing_type": "S-1",
-        "status": "filed",
+        "status": "effective",
         "filing_date": "2025-03-12",
         "decision_deadline": None,
         "staking_included": True,
-        "notes": "S-1 filed Mar 2025. Includes staking. Awaiting SEC review.",
+        "notes": "S-1 filed Mar 2025. Launched Dec 3, 2025 as SOEZ on NYSE Arca. See ETFS table for live data.",
     },
     {
         "issuer": "WisdomTree",
