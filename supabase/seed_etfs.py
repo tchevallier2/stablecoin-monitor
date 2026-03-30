@@ -190,6 +190,18 @@ FILINGS = [
         "staking_included": None,
         "notes": "Joint filing with Osprey Funds.",
     },
+    {
+        "issuer": "Morgan Stanley",
+        "etf_name": "Morgan Stanley Solana Trust",
+        "ticker_proposed": None,
+        "filing_type": "S-1",
+        "status": "filed",
+        "filing_date": "2026-01-06",
+        "decision_deadline": None,
+        "staking_included": True,
+        "notes": "S-1 filed Jan 6, 2026 by Morgan Stanley Investment Management Inc. Includes staking. First major Wall Street bank to file for a spot SOL ETF. SEC EDGAR: https://www.sec.gov/Archives/edgar/data/2103547/000110465926000988/tm2534148d1_s1.htm",
+        "is_new": True,
+    },
 ]
 
 
