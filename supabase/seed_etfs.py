@@ -1,6 +1,6 @@
 """
 Seed script for Solana ETF tables.
-Populates solana_etfs with the 6 live US-listed Solana ETFs
+Populates solana_etfs with the 8 live US-listed Solana ETFs
 and solana_etf_filings with known upcoming/pending filings.
 
 Usage:
@@ -18,7 +18,7 @@ SUPABASE_KEY = os.environ["SUPABASE_SERVICE_ROLE_KEY"]
 
 supabase = create_client(SUPABASE_URL, SUPABASE_KEY)
 
-# ── Live ETFs (data sourced from issuer sites, Mar 28 2026) ──────────
+# ── Live ETFs (data sourced from issuer sites, Mar 30 2026) ──────────
 
 ETFS = [
     {
@@ -108,18 +108,58 @@ ETFS = [
         "aum_usd": 29_980_000,
         "price_usd": 8.00,
         "price_source": "static",
-        "exp_ratio_current": "0.21%",
+        "exp_ratio_current": "0% (waived)",
         "exp_ratio_target": "0.21%",
+        "exp_waiver_note": "Waived Oct 9, 2025 through Oct 8, 2026",
+        "fee_waived": True,
+        "staking_enabled": True,
+        "commission_current": "N/A",
+        "commission_target": "N/A",
+        "commission_note": "Distributes rewards to shareholders quarterly",
+        "pct_staked": "99.77%",
+        "gross_yield": "~7.0%",
+        "net_yield": "~6.7%",
+        "description": "Distributes staking rewards quarterly ($0.016962/share Mar 31 2026; $0.316871/share Feb 2026 covering Oct–Jan). 0.21% expense ratio waived through Oct 8, 2026. 99.77% utilization rate. CME CF Solana-Dollar Reference Rate.",
+    },
+    {
+        "ticker": "SOEZ",
+        "issuer": "Franklin Templeton",
+        "exchange": "NYSE Arca",
+        "aum_usd": 10_290_000,
+        "price_usd": 14.58,
+        "price_source": "static",
+        "exp_ratio_current": "0% (waived)",
+        "exp_ratio_target": "0.19%",
+        "exp_waiver_note": "Waived through May 31, 2026 on first $5B AUM",
+        "fee_waived": True,
+        "staking_enabled": True,
+        "commission_current": "N/A",
+        "commission_target": "N/A",
+        "commission_note": "Validator/staking fees not separately disclosed; reflected in NAV",
+        "pct_staked": "up to 100%",
+        "gross_yield": "N/A",
+        "net_yield": "N/A",
+        "description": "Launched Nov/Dec 2025 on NYSE Arca. 0.19% expense ratio waived through May 31, 2026 on first $5B AUM. Staking up to 100% of assets; rewards accrue to NAV. Custodians: Coinbase Custody, BNY (admin).",
+    },
+    {
+        "ticker": "SSK",
+        "issuer": "REX Shares / Osprey Funds",
+        "exchange": "Cboe BZX",
+        "aum_usd": 86_360_000,
+        "price_usd": 20.85,
+        "price_source": "static",
+        "exp_ratio_current": "1.40%",
+        "exp_ratio_target": "1.40%",
         "exp_waiver_note": None,
         "fee_waived": False,
         "staking_enabled": True,
         "commission_current": "N/A",
         "commission_target": "N/A",
-        "commission_note": "Distributes rewards to shareholders monthly",
-        "pct_staked": "99.77%",
-        "gross_yield": "~7.0%",
-        "net_yield": "~6.7%",
-        "description": "Distributes staking rewards monthly ($0.016962/share in Mar 2026). 99.77% utilization rate. CME CF Solana-Dollar Reference Rate.",
+        "commission_note": "Staking rewards distributed as monthly dividends; validator commission not separately disclosed",
+        "pct_staked": "N/A",
+        "gross_yield": "N/A",
+        "net_yield": "~5.12%",
+        "description": "Launched July 2, 2025. C-corp structure enabling monthly staking dividend distributions (~5.12% dividend yield). Highest expense ratio at 1.40%. Uses Cayman subsidiary. Note: C-corp introduces double taxation at fund and investor levels.",
     },
     {
         "ticker": "SOLC",
@@ -149,13 +189,13 @@ FILINGS = [
     {
         "issuer": "Franklin Templeton",
         "etf_name": "Franklin Solana ETF",
-        "ticker_proposed": None,
+        "ticker_proposed": "SOEZ",
         "filing_type": "S-1",
-        "status": "filed",
+        "status": "approved",
         "filing_date": "2025-03-12",
         "decision_deadline": None,
         "staking_included": True,
-        "notes": "S-1 filed Mar 2025. Includes staking. Awaiting SEC review.",
+        "notes": "S-1 filed Mar 2025. Launched Nov/Dec 2025 as SOEZ on NYSE Arca. 0.19% expense ratio waived through May 31, 2026 on first $5B AUM. Staking up to 100%; rewards accrue to NAV.",
     },
     {
         "issuer": "WisdomTree",
@@ -181,14 +221,14 @@ FILINGS = [
     },
     {
         "issuer": "REX Shares",
-        "etf_name": "REX-Osprey Solana ETF",
-        "ticker_proposed": None,
+        "etf_name": "REX-Osprey SOL + Staking ETF",
+        "ticker_proposed": "SSK",
         "filing_type": "S-1",
-        "status": "filed",
+        "status": "approved",
         "filing_date": "2025-03-05",
         "decision_deadline": None,
-        "staking_included": None,
-        "notes": "Joint filing with Osprey Funds.",
+        "staking_included": True,
+        "notes": "Joint filing with Osprey Funds. Launched July 2, 2025 as SSK on Cboe BZX. 1.40% expense ratio. C-corp structure with monthly staking dividend distributions (~5.12% yield). ~$86M AUM as of Mar 2026.",
     },
 ]
 
