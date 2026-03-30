@@ -193,13 +193,13 @@ ETFS = [
         "exp_waiver_note": None,
         "fee_waived": False,
         "staking_enabled": True,
-        "commission_current": "N/A",
-        "commission_target": "N/A",
-        "commission_note": "Marinade Finance liquid staking; not separately disclosed",
-        "pct_staked": "N/A",
+        "commission_current": "0%",
+        "commission_target": "0%",
+        "commission_note": "Sponsor charges 0% staking fee; Marinade Select validators charge up to 7% via Stake Auction Marketplace (not separately disclosed to investors)",
+        "pct_staked": "~100%",
         "gross_yield": "~7.0%",
         "net_yield": "N/A",
-        "description": "Smallest by AUM. Partners with Marinade Finance for liquid staking. Highest expense ratio of the group.",
+        "description": "Smallest by AUM. Uses Marinade Select (SOC 2 Type 1; 73 validators) for liquid staking; exclusive provider for 2 years post-launch. Sponsor charges 0% staking fee; rewards compound into NAV. Exclusive staking partner: Marinade Finance.",
     },
 ]
 
