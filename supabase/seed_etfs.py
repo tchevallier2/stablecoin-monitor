@@ -1,6 +1,6 @@
 """
 Seed script for Solana ETF tables.
-Populates solana_etfs with the 8 live US-listed Solana ETFs
+Populates solana_etfs with the 9 live US-listed Solana ETFs
 and solana_etf_filings with known upcoming/pending filings.
 
 Usage:
@@ -160,6 +160,26 @@ ETFS = [
         "gross_yield": "N/A",
         "net_yield": "~5.12%",
         "description": "Launched July 2, 2025. C-corp structure enabling monthly staking dividend distributions (~5.12% dividend yield). Highest expense ratio at 1.40%. Uses Cayman subsidiary. Note: C-corp introduces double taxation at fund and investor levels.",
+    },
+    {
+        "ticker": "QSOL",
+        "issuer": "Invesco / Galaxy Asset Management",
+        "exchange": "Cboe BZX",
+        "aum_usd": 100_000,
+        "price_usd": 25.00,
+        "price_source": "static",
+        "exp_ratio_current": "0.25%",
+        "exp_ratio_target": "0.25%",
+        "exp_waiver_note": None,
+        "fee_waived": False,
+        "staking_enabled": True,
+        "commission_current": "N/A",
+        "commission_target": "N/A",
+        "commission_note": "Staking via Galaxy Blockchain Infrastructure LLC; validator commission not separately disclosed",
+        "pct_staked": "substantially all",
+        "gross_yield": "N/A",
+        "net_yield": "N/A",
+        "description": "Launched Dec 15, 2025 on Cboe BZX. Tracks Lukka Prime Solana Reference Rate. Stakes substantially all SOL via Galaxy Blockchain Infrastructure LLC (liquidity sleeve retained unstaked). Custody: Coinbase Custody Trust; admin: BNY Mellon. No formal fee waiver. AUM/price at seed ($100K, 4,000 shares).",
     },
     {
         "ticker": "SOLC",
