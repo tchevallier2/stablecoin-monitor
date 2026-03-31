@@ -23,11 +23,29 @@ export default async function SolanaEtfsPage() {
   const { data: filings } = await supabase
     .from("solana_etf_filings")
     .select("*")
-    .order("filing_date", { ascending: true });
+    .not("status", "eq", "approved")
+    .order("filing_date", { ascending: true, nullsFirst: false });
 
   const totalAum = etfs?.reduce((s, e) => s + (e.aum_usd || 0), 0) ?? 0;
   const stakingEnabled = etfs?.filter((e) => e.staking_enabled).length ?? 0;
   const etfCount = etfs?.length ?? 0;
+
+  // Find the most recent updated_at across all ETFs for the "as of" timestamp
+  const latestUpdate = etfs?.reduce((latest, e) => {
+    if (!e.updated_at) return latest;
+    return !latest || e.updated_at > latest ? e.updated_at : latest;
+  }, null as string | null);
+
+  const asOfLabel = latestUpdate
+    ? new Date(latestUpdate).toLocaleString("en-US", {
+        month: "short",
+        day: "numeric",
+        year: "numeric",
+        hour: "numeric",
+        minute: "2-digit",
+        timeZoneName: "short",
+      })
+    : null;
 
   return (
     <div>
@@ -83,10 +101,14 @@ export default async function SolanaEtfsPage() {
           <span className="w-2.5 h-2.5 rounded-sm bg-[#d29922]" />
           Static / fallback data
         </span>
+        <span className="flex items-center gap-1.5">
+          <span className="w-2.5 h-2.5 rounded-sm bg-[#14f195]" />
+          Recently added filing
+        </span>
       </div>
 
       {/* Main ETF table */}
-      <div className="bg-card border border-card-border rounded-lg overflow-x-auto mb-10">
+      <div className="bg-card border border-card-border rounded-lg overflow-x-auto">
         <table className="w-full text-sm min-w-[1100px]">
           <thead>
             <tr className="border-b border-card-border text-left text-muted text-xs uppercase tracking-wide">
@@ -108,7 +130,7 @@ export default async function SolanaEtfsPage() {
             {etfs?.map((etf, i) => {
               const isLive = etf.price_source === "live";
               const rowBg = etf.fee_waived
-                ? ""
+                ? "bg-[rgba(63,185,80,0.05)]"
                 : "bg-[rgba(153,69,255,0.07)]";
 
               return (
@@ -190,11 +212,16 @@ export default async function SolanaEtfsPage() {
           </tbody>
         </table>
       </div>
+      {asOfLabel && (
+        <p className="text-[11px] text-muted mt-2 mb-10 px-1">
+          AUM &amp; Price as of {asOfLabel}
+        </p>
+      )}
 
       {/* Upcoming Filings */}
-      <h2 className="text-xl font-bold mb-4">Upcoming Filings</h2>
+      <h2 className="text-xl font-bold mb-4">Upcoming Filings &amp; Announcements</h2>
       <p className="text-muted text-sm mb-4">
-        Pending SEC filings for Solana spot ETFs not yet trading
+        Pending SEC filings and announced Solana spot ETFs not yet trading
       </p>
 
       {filings && filings.length > 0 ? (
@@ -210,13 +237,21 @@ export default async function SolanaEtfsPage() {
                 <th className="px-4 py-3">Filing Date</th>
                 <th className="px-4 py-3">Deadline</th>
                 <th className="px-4 py-3">Staking</th>
+                <th className="px-4 py-3">Verified</th>
                 <th className="px-4 py-3">Notes</th>
               </tr>
             </thead>
             <tbody>
               {filings.map((f) => (
-                <tr key={f.id} className="border-b border-card-border/50 hover:bg-card-border/20">
-                  <td className="px-4 py-3 font-medium">{f.issuer}</td>
+                <tr key={f.id} className={`border-b border-card-border/50 hover:bg-card-border/20 ${f.is_new ? "bg-[rgba(20,241,149,0.08)]" : ""}`}>
+                  <td className="px-4 py-3 font-medium">
+                    {f.issuer}
+                    {f.is_new && (
+                      <span className="ml-2 inline-flex px-1.5 py-0.5 rounded text-[10px] font-bold uppercase tracking-wide bg-[rgba(20,241,149,0.2)] text-[#14f195] border border-[rgba(20,241,149,0.4)]">
+                        New
+                      </span>
+                    )}
+                  </td>
                   <td className="px-4 py-3">{f.etf_name}</td>
                   <td className="px-4 py-3 font-mono text-[#58a6ff]">
                     {f.ticker_proposed ?? "TBD"}
@@ -244,6 +279,19 @@ export default async function SolanaEtfsPage() {
                       <span className="text-muted text-xs">TBD</span>
                     )}
                   </td>
+                  <td className="px-4 py-3 font-mono text-xs">
+                    {(() => {
+                      if (!f.last_verified) return <span className="text-muted">—</span>;
+                      const days = Math.floor((Date.now() - new Date(f.last_verified).getTime()) / 86400000);
+                      const stale = days > 14;
+                      return (
+                        <span className={stale ? "text-[#d29922]" : "text-muted"} title={stale ? `Last verified ${days} days ago` : ""}>
+                          {f.last_verified}
+                          {stale && <span className="ml-1">⚠</span>}
+                        </span>
+                      );
+                    })()}
+                  </td>
                   <td className="px-4 py-3 text-muted text-xs max-w-[250px] truncate" title={f.notes ?? ""}>
                     {f.notes ?? "—"}
                   </td>
@@ -270,6 +318,7 @@ export default async function SolanaEtfsPage() {
 function FilingStatusBadge({ status }: { status: string }) {
   const styles: Record<string, string> = {
     filed: "bg-[rgba(88,166,255,0.15)] text-[#58a6ff] border-[rgba(88,166,255,0.3)]",
+    announced: "bg-[rgba(210,153,34,0.15)] text-[#d29922] border-[rgba(210,153,34,0.3)]",
     acknowledged: "bg-[rgba(210,153,34,0.15)] text-[#d29922] border-[rgba(210,153,34,0.3)]",
     comment_period: "bg-[rgba(210,153,34,0.15)] text-[#d29922] border-[rgba(210,153,34,0.3)]",
     effective: "bg-[rgba(63,185,80,0.15)] text-accent-green border-[rgba(63,185,80,0.3)]",
