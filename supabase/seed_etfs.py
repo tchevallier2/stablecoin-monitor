@@ -1,6 +1,6 @@
 """
 Seed script for Solana ETF tables.
-Populates solana_etfs with the 6 live US-listed Solana ETFs
+Populates solana_etfs with the 9 live US-listed Solana ETFs
 and solana_etf_filings with known upcoming/pending filings.
 
 Usage:
@@ -18,7 +18,7 @@ SUPABASE_KEY = os.environ["SUPABASE_SERVICE_ROLE_KEY"]
 
 supabase = create_client(SUPABASE_URL, SUPABASE_KEY)
 
-# ── Live ETFs (data sourced from issuer sites, Mar 28 2026) ──────────
+# ── Live ETFs (data sourced from issuer sites, Apr 13 2026) ──────────
 
 ETFS = [
     {
@@ -133,13 +133,13 @@ ETFS = [
         "exp_waiver_note": None,
         "fee_waived": False,
         "staking_enabled": True,
-        "commission_current": "N/A",
-        "commission_target": "N/A",
-        "commission_note": "Marinade Finance liquid staking; not separately disclosed",
+        "commission_current": "0%",
+        "commission_target": "0%",
+        "commission_note": "Sponsor does not charge staking fees. Uses Marinade Finance (Marinade Select) liquid staking.",
         "pct_staked": "N/A",
         "gross_yield": "~7.0%",
         "net_yield": "N/A",
-        "description": "Partners with Marinade Finance for liquid staking.",
+        "description": "Partners with Marinade Finance (Marinade Select) for liquid staking. Sponsor charges no staking fees.",
     },
     {
         "ticker": "SSK",
@@ -148,8 +148,8 @@ ETFS = [
         "aum_usd": None,
         "price_usd": None,
         "price_source": "static",
-        "exp_ratio_current": "0.75%",
-        "exp_ratio_target": "0.75%",
+        "exp_ratio_current": "1.40%",
+        "exp_ratio_target": "1.40%",
         "exp_waiver_note": None,
         "fee_waived": False,
         "staking_enabled": True,
@@ -159,7 +159,47 @@ ETFS = [
         "pct_staked": "N/A",
         "gross_yield": "N/A",
         "net_yield": "N/A",
-        "description": "REX-Osprey SOL Staking ETF. Anchorage Digital custody. Approved and live.",
+        "description": "Launched Jul 2, 2025. Converted from C-corp to RIC structure Sep 1, 2025. Anchorage Digital custody. 1.40% expense ratio.",
+    },
+    {
+        "ticker": "SOEZ",
+        "issuer": "Franklin Templeton",
+        "exchange": "NYSE Arca",
+        "aum_usd": 9_600_000,
+        "price_usd": None,
+        "price_source": "static",
+        "exp_ratio_current": "0% (waived)",
+        "exp_ratio_target": "0.19%",
+        "exp_waiver_note": "Sponsor fee waived through May 31, 2026 on first $5B AUM",
+        "fee_waived": True,
+        "staking_enabled": True,
+        "commission_current": "N/A",
+        "commission_target": "N/A",
+        "commission_note": "Stakes up to 100% of SOL; validator/staking fees netted in NAV, not separately disclosed",
+        "pct_staked": "~100%",
+        "gross_yield": "N/A",
+        "net_yield": "N/A",
+        "description": "Launched Dec 3, 2025. Lowest expense ratio at 0.19%, waived through May 31, 2026 on first $5B AUM. Stakes up to 100% of SOL. Uses CF Benchmarks Solana Index.",
+    },
+    {
+        "ticker": "QSOL",
+        "issuer": "Invesco Galaxy",
+        "exchange": "Cboe BZX",
+        "aum_usd": None,
+        "price_usd": None,
+        "price_source": "static",
+        "exp_ratio_current": "0.25%",
+        "exp_ratio_target": "0.25%",
+        "exp_waiver_note": None,
+        "fee_waived": False,
+        "staking_enabled": True,
+        "commission_current": "N/A",
+        "commission_target": "N/A",
+        "commission_note": "Stakes substantially all SOL; staking commission not separately disclosed",
+        "pct_staked": "~100%",
+        "gross_yield": "N/A",
+        "net_yield": "N/A",
+        "description": "Launched Dec 15, 2025. Grantor trust structure. Tracks Lukka Prime Solana Reference Rate. Coinbase custody. Stakes substantially all SOL.",
     },
 ]
 
@@ -171,13 +211,13 @@ FILINGS = [
         "etf_name": "Franklin Solana ETF",
         "ticker_proposed": "SOEZ",
         "filing_type": "S-1",
-        "status": "filed",
+        "status": "approved",
         "filing_date": "2025-03-12",
         "decision_deadline": None,
         "staking_included": True,
         "is_new": False,
-        "last_verified": "2026-03-30",
-        "notes": "S-1 filed Mar 2025. Includes staking. Proposed ticker SOEZ on Cboe BZX.",
+        "last_verified": "2026-04-13",
+        "notes": "Approved and launched Dec 3, 2025 on NYSE Arca as SOEZ. 0.19% expense ratio (waived through May 31, 2026 on first $5B AUM). Stakes up to 100% of SOL.",
     },
     {
         "issuer": "WisdomTree",
@@ -189,8 +229,8 @@ FILINGS = [
         "decision_deadline": None,
         "staking_included": None,
         "is_new": False,
-        "last_verified": "2026-03-30",
-        "notes": "S-1 filed Mar 2025.",
+        "last_verified": "2026-04-13",
+        "notes": "S-1 filed Mar 2025. No SEC approval or withdrawal found as of Apr 2026. (Note: European SOLW ETP is a separate product.)",
     },
     {
         "issuer": "ProShares",
@@ -202,8 +242,8 @@ FILINGS = [
         "decision_deadline": None,
         "staking_included": None,
         "is_new": False,
-        "last_verified": "2026-03-30",
-        "notes": "S-1 filed Jun 2025. Also has live leveraged futures ETF (SLON).",
+        "last_verified": "2026-04-13",
+        "notes": "S-1 filed Jun 2025. No SEC approval found as of Apr 2026. Also has live leveraged futures ETF (SLON).",
     },
     {
         "issuer": "REX-Osprey",
@@ -215,8 +255,8 @@ FILINGS = [
         "decision_deadline": None,
         "staking_included": True,
         "is_new": False,
-        "last_verified": "2026-03-30",
-        "notes": "Approved. Live on Cboe BZX as SSK. 0.75% expense ratio. Anchorage Digital custody.",
+        "last_verified": "2026-04-13",
+        "notes": "Approved. Live on Cboe BZX as SSK. 1.40% expense ratio (converted from C-corp to RIC structure Sep 1, 2025). Anchorage Digital custody.",
     },
     {
         "issuer": "Morgan Stanley",
@@ -228,36 +268,36 @@ FILINGS = [
         "decision_deadline": None,
         "staking_included": True,
         "is_new": True,
-        "last_verified": "2026-03-30",
+        "last_verified": "2026-04-13",
         "sec_url": "https://www.sec.gov/Archives/edgar/data/2103547/000110465926000988/tm2534148d1_s1.htm",
-        "notes": "S-1 filed Jan 2026 via E*TRADE Capital Management. Includes staking.",
+        "notes": "S-1 filed Jan 2026 via E*TRADE Capital Management. Includes staking. No SEC approval as of Apr 2026.",
     },
     {
         "issuer": "CoinShares",
         "etf_name": "CoinShares Solana ETF",
         "ticker_proposed": None,
         "filing_type": "S-1",
-        "status": "filed",
+        "status": "withdrawn",
         "filing_date": None,
         "decision_deadline": None,
         "staking_included": None,
         "is_new": True,
-        "last_verified": "2026-03-30",
+        "last_verified": "2026-04-13",
         "sec_url": "https://www.sec.gov/Archives/edgar/data/2073298/000199937125014084/solana-s1a_092625.htm",
-        "notes": "S-1/A filed. Planned listing on Nasdaq. Coinbase & BitGo custody.",
+        "notes": "S-1 withdrawn Nov 28, 2025. CoinShares abandoned plans for Solana, XRP, and Litecoin ETFs. Registration statement was never effectuated.",
     },
     {
         "issuer": "Invesco Galaxy",
         "etf_name": "Invesco Galaxy Solana ETF",
         "ticker_proposed": "QSOL",
         "filing_type": "S-1",
-        "status": "filed",
+        "status": "approved",
         "filing_date": None,
         "decision_deadline": None,
-        "staking_included": None,
+        "staking_included": True,
         "is_new": True,
-        "last_verified": "2026-03-30",
-        "notes": "S-1 filed. Proposed ticker QSOL on Cboe BZX. Coinbase custody.",
+        "last_verified": "2026-04-13",
+        "notes": "Approved and launched Dec 15, 2025 on Cboe BZX as QSOL. 0.25% expense ratio. Grantor trust. Stakes substantially all SOL. Coinbase custody.",
     },
     {
         "issuer": "Osprey Funds",
@@ -269,8 +309,8 @@ FILINGS = [
         "decision_deadline": None,
         "staking_included": None,
         "is_new": True,
-        "last_verified": "2026-03-30",
-        "notes": "S-1 filed. Proposed ticker OSOL on Cboe BZX. Coinbase custody. Separate from REX-Osprey joint filing.",
+        "last_verified": "2026-04-13",
+        "notes": "S-1 filed. Proposed ticker OSOL on Cboe BZX. Coinbase custody. Separate from REX-Osprey joint filing (SSK). No SEC approval as of Apr 2026.",
     },
     {
         "issuer": "VanEck",
@@ -282,8 +322,8 @@ FILINGS = [
         "decision_deadline": None,
         "staking_included": True,
         "is_new": True,
-        "last_verified": "2026-03-30",
-        "notes": "LST-based Solana ETF using Jito liquid staking token. Separate from VSOL spot ETF.",
+        "last_verified": "2026-04-13",
+        "notes": "LST-based Solana ETF using Jito liquid staking token. Nasdaq filed 19b-4 (SR-NASDAQ-2026-010) for listing. In SEC exchange-review phase as of Apr 2026; not yet approved. Separate from VSOL spot ETF.",
     },
 ]
 
