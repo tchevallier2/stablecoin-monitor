@@ -18,7 +18,7 @@ SUPABASE_KEY = os.environ["SUPABASE_SERVICE_ROLE_KEY"]
 
 supabase = create_client(SUPABASE_URL, SUPABASE_KEY)
 
-# ── Live ETFs (data sourced from issuer sites, Mar 28 2026) ──────────
+# ── Live ETFs (data sourced from issuer sites, Mar 28 2026; SOEZ added Apr 15 2026) ──
 
 ETFS = [
     {
@@ -161,6 +161,26 @@ ETFS = [
         "net_yield": "N/A",
         "description": "REX-Osprey SOL Staking ETF. Anchorage Digital custody. Approved and live.",
     },
+    {
+        "ticker": "SOEZ",
+        "issuer": "Franklin Templeton",
+        "exchange": "NYSE Arca",
+        "aum_usd": 9_600_000,
+        "price_usd": None,
+        "price_source": "static",
+        "exp_ratio_current": "0% (waived)",
+        "exp_ratio_target": "0.19%",
+        "exp_waiver_note": "Fee waived through May 31, 2026 on first $5B AUM",
+        "fee_waived": True,
+        "staking_enabled": True,
+        "commission_current": "N/A",
+        "commission_target": "N/A",
+        "commission_note": "Staking commission not separately disclosed; net rewards retained by fund",
+        "pct_staked": "~100%",
+        "gross_yield": "~7.0%",
+        "net_yield": "~7.0%",
+        "description": "Launched Dec 3, 2025 on NYSE Arca. 0.19% management fee waived through May 31, 2026 on first $5B AUM. Stakes up to 100% of SOL. Coinbase Custody Trust. CME CF Solana-Dollar Reference Rate (NY variant).",
+    },
 ]
 
 # ── Upcoming / pending filings ───────────────────────────────────────
@@ -171,13 +191,13 @@ FILINGS = [
         "etf_name": "Franklin Solana ETF",
         "ticker_proposed": "SOEZ",
         "filing_type": "S-1",
-        "status": "filed",
+        "status": "approved",
         "filing_date": "2025-03-12",
         "decision_deadline": None,
         "staking_included": True,
         "is_new": False,
-        "last_verified": "2026-03-30",
-        "notes": "S-1 filed Mar 2025. Includes staking. Proposed ticker SOEZ on Cboe BZX.",
+        "last_verified": "2026-04-15",
+        "notes": "S-1 filed Mar 2025. Launched Dec 3, 2025 on NYSE Arca (originally proposed for Cboe BZX). Stakes up to 100% of SOL. 0.19% fee waived through May 31, 2026. Coinbase custody.",
     },
     {
         "issuer": "WisdomTree",
