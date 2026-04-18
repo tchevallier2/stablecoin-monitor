@@ -285,6 +285,32 @@ FILINGS = [
         "last_verified": "2026-03-30",
         "notes": "LST-based Solana ETF using Jito liquid staking token. Separate from VSOL spot ETF.",
     },
+    {
+        "issuer": "Volatility Shares",
+        "etf_name": "Volatility Shares Solana ETF",
+        "ticker_proposed": "SOLZ",
+        "filing_type": "ETF-1A",
+        "status": "approved",
+        "filing_date": "2025-03-20",
+        "decision_deadline": None,
+        "staking_included": False,
+        "is_new": True,
+        "last_verified": "2026-04-18",
+        "notes": "Futures-based Solana ETF (not spot). Launched March 20, 2025 on Nasdaq. 0.95% expense ratio. Tracks CME Solana futures contracts.",
+    },
+    {
+        "issuer": "Volatility Shares",
+        "etf_name": "Volatility Shares 2x Solana ETF",
+        "ticker_proposed": "SOLT",
+        "filing_type": "ETF-1A",
+        "status": "approved",
+        "filing_date": "2025-03-20",
+        "decision_deadline": None,
+        "staking_included": False,
+        "is_new": True,
+        "last_verified": "2026-04-18",
+        "notes": "Leveraged (2x daily) futures-based Solana ETF. Launched March 20, 2025 on Nasdaq. 1.85% expense ratio. Seeks 2x daily return of SOL via CME futures.",
+    },
 ]
 
 
