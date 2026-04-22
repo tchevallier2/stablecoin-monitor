@@ -285,6 +285,19 @@ FILINGS = [
         "last_verified": "2026-03-30",
         "notes": "LST-based Solana ETF using Jito liquid staking token. Separate from VSOL spot ETF.",
     },
+    {
+        "issuer": "VanEck",
+        "etf_name": "VanEck JitoSOL ETF",
+        "ticker_proposed": None,
+        "filing_type": "19b-4",
+        "status": "filed",
+        "filing_date": "2026-03-10",
+        "decision_deadline": "2026-05-04",
+        "staking_included": True,
+        "is_new": True,
+        "last_verified": "2026-04-22",
+        "notes": "Nasdaq 19b-4 (SR-NASDAQ-2026-016) filed Mar 10, 2026; published Federal Register Mar 20, 2026. Proposes listing JitoSOL liquid staking token ETF under Nasdaq Rule 5711(d) (Commodity-Based Trust Shares). JitoSOL auto-compounds staking rewards into NAV. Initial SEC decision deadline ~May 4, 2026 (extendable to ~Jun 18, 2026). Sources: federalregister.gov/documents/2026/03/20/2026-05475",
+    },
 ]
 
 
