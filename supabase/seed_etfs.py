@@ -285,6 +285,19 @@ FILINGS = [
         "last_verified": "2026-03-30",
         "notes": "LST-based Solana ETF using Jito liquid staking token. Separate from VSOL spot ETF.",
     },
+    {
+        "issuer": "GSR",
+        "etf_name": "GSR Crypto Core3 ETF",
+        "ticker_proposed": "BESO",
+        "filing_type": "N-1A",
+        "status": "launched",
+        "filing_date": "2026-04-22",
+        "decision_deadline": None,
+        "staking_included": True,
+        "is_new": True,
+        "last_verified": "2026-04-23",
+        "notes": "Multi-asset ETF (BTC, ETH, SOL) with active management. Launched Apr 22, 2026 on Nasdaq. 1% management fee. Staking rewards on ETH and SOL holdings. Framework Digital Advisors as investment adviser; GSR Strategies as sub-adviser. First multi-asset crypto staking ETF listed in the U.S.",
+    },
 ]
 
 
