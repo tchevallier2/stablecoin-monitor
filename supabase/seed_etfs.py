@@ -282,8 +282,21 @@ FILINGS = [
         "decision_deadline": None,
         "staking_included": True,
         "is_new": True,
-        "last_verified": "2026-03-30",
-        "notes": "LST-based Solana ETF using Jito liquid staking token. Separate from VSOL spot ETF.",
+        "last_verified": "2026-04-24",
+        "notes": "LST-based Solana ETF using Jito liquid staking token. Separate from VSOL spot ETF. Nasdaq filed 19b-4 (SR-NASDAQ-2026-016) on Mar 17, 2026 to list shares; SEC review pending.",
+    },
+    {
+        "issuer": "Volatility Shares",
+        "etf_name": "Volatility Shares Solana ETF",
+        "ticker_proposed": "SOLZ",
+        "filing_type": "485BPOS",
+        "status": "approved",
+        "filing_date": "2025-03-20",
+        "decision_deadline": None,
+        "staking_included": False,
+        "is_new": True,
+        "last_verified": "2026-04-24",
+        "notes": "Futures-based ETFs tracking SOL via CME futures (not spot SOL). SOLZ (1x exposure, 0.95% exp ratio, fee waiver through Jun 30 2026) and SOLT (2x leveraged, 1.85% exp ratio) both launched Mar 20, 2025 on Nasdaq under Volatility Shares Trust (CIK 1884021).",
     },
 ]
 
