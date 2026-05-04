@@ -285,6 +285,33 @@ FILINGS = [
         "last_verified": "2026-03-30",
         "notes": "LST-based Solana ETF using Jito liquid staking token. Separate from VSOL spot ETF.",
     },
+    {
+        "issuer": "Volatility Shares",
+        "etf_name": "Volatility Shares Solana ETF",
+        "ticker_proposed": "SOLZ",
+        "filing_type": "485APOS",
+        "status": "approved",
+        "filing_date": None,
+        "decision_deadline": None,
+        "staking_included": False,
+        "is_new": True,
+        "last_verified": "2026-05-04",
+        "sec_url": "https://www.sec.gov/Archives/edgar/data/1884021/000121390024113152/ea0225648-01_485apos.htm",
+        "notes": "Futures-based (not spot) Solana ETF. Launched March 20, 2025 on NASDAQ. 0.95% expense ratio (waived until Jun 30, 2026; 1.15% thereafter). Holds CME Solana futures contracts; does not hold SOL directly. Also operates 2x Solana ETF (ticker: SOLT, 1.85% ER, NASDAQ) under same Volatility Shares Trust.",
+    },
+    {
+        "issuer": "Roundhill",
+        "etf_name": "Roundhill Solana Covered Call Strategy ETF",
+        "ticker_proposed": "SOL",
+        "filing_type": "485APOS",
+        "status": "filed",
+        "filing_date": "2025-10-31",
+        "decision_deadline": None,
+        "staking_included": False,
+        "is_new": True,
+        "last_verified": "2026-05-04",
+        "notes": "Synthetic covered call strategy ETF; seeks current income + SOL price exposure. Invests 80%+ of assets in Solana ETF options. 485APOS filed Oct 2025, targeted Dec 2025 effective date. Companion fund YSOL (invests in YSOL ETF options) filed concurrently.",
+    },
 ]
 
 
