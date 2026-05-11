@@ -279,11 +279,11 @@ FILINGS = [
         "filing_type": "S-1",
         "status": "filed",
         "filing_date": None,
-        "decision_deadline": None,
+        "decision_deadline": "2026-06-18",
         "staking_included": True,
         "is_new": True,
-        "last_verified": "2026-03-30",
-        "notes": "LST-based Solana ETF using Jito liquid staking token. Separate from VSOL spot ETF.",
+        "last_verified": "2026-05-11",
+        "notes": "LST-based Solana ETF using Jito liquid staking token. Separate from VSOL spot ETF. Nasdaq filed 19b-4 (File No. SR-NASDAQ-2026-016) on 2026-02-27 to list on Nasdaq under Rule 5711(d). SEC decision deadline June 18, 2026.",
     },
 ]
 
