@@ -285,6 +285,32 @@ FILINGS = [
         "last_verified": "2026-03-30",
         "notes": "LST-based Solana ETF using Jito liquid staking token. Separate from VSOL spot ETF.",
     },
+    {
+        "issuer": "Volatility Shares",
+        "etf_name": "Volatility Shares Solana ETF / 2x Solana ETF",
+        "ticker_proposed": "SOLZ / SOLT",
+        "filing_type": "485BPOS",
+        "status": "approved",
+        "filing_date": None,
+        "decision_deadline": None,
+        "staking_included": False,
+        "is_new": True,
+        "last_verified": "2026-05-18",
+        "notes": "Two futures-based Solana ETFs live on NASDAQ since Mar 20, 2025. SOLZ (1x, 0.95% fee until Jun 30 2026 then 1.15%, AUM ~$107M) and SOLT (2x leveraged, 1.85% fee). Among first US Solana ETFs, launched before spot ETF approval.",
+    },
+    {
+        "issuer": "ProShares",
+        "etf_name": "ProShares Short Solana ETF / UltraShort Solana ETF",
+        "ticker_proposed": "SLOP",
+        "filing_type": "485A",
+        "status": "filed",
+        "filing_date": "2025-07-14",
+        "decision_deadline": None,
+        "staking_included": False,
+        "is_new": True,
+        "last_verified": "2026-05-18",
+        "notes": "Two SEC-registered futures inverse Solana ETFs, registered Jul 14, 2025 via 485A under ProShares Trust, NYSE Arca. Short Solana ETF (SLOP, -1x) and UltraShort Solana ETF (-2x, ticker TBC). Both pending launch. Distinct from ProShares spot Solana S-1 filing (Jun 2025).",
+    },
 ]
 
 
