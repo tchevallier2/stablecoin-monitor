@@ -285,6 +285,19 @@ FILINGS = [
         "last_verified": "2026-03-30",
         "notes": "LST-based Solana ETF using Jito liquid staking token. Separate from VSOL spot ETF.",
     },
+    {
+        "issuer": "Volatility Shares",
+        "etf_name": "Volatility Shares Solana ETF / 2x Solana ETF",
+        "ticker_proposed": "SOLZ / SOLT",
+        "filing_type": "485BPOS",
+        "status": "approved",
+        "filing_date": "2025-03-14",
+        "decision_deadline": None,
+        "staking_included": False,
+        "is_new": True,
+        "last_verified": "2026-06-01",
+        "notes": "Two futures-based Solana ETFs using CME SOL futures (not spot). SOLZ (1x, 0.95% ER) and SOLT (2x leveraged, 1.85% ER). Both live on NASDAQ since Mar 19, 2025. No staking. SEC Form 8-A12B filed Mar 13, 2025.",
+    },
 ]
 
 
