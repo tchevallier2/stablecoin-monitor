@@ -228,7 +228,7 @@ FILINGS = [
         "decision_deadline": None,
         "staking_included": True,
         "is_new": True,
-        "last_verified": "2026-05-29",
+        "last_verified": "2026-06-04",
         "sec_url": "https://www.sec.gov/Archives/edgar/data/0002103547/000110465926064065/tm2534148d2_s1a.htm",
         "notes": "S-1 filed Jan 2026 via E*TRADE Capital Management. S-1/A filed May 20, 2026 adding proposed ticker MSOL (NYSE Arca), detailed staking plan (up to 100% staked, rewards distributed monthly), custodians Coinbase Custody and BNY Mellon.",
     },
