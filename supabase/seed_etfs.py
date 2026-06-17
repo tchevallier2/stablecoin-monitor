@@ -1,6 +1,6 @@
 """
 Seed script for Solana ETF tables.
-Populates solana_etfs with the 6 live US-listed Solana ETFs
+Populates solana_etfs with the 9 live US-listed Solana ETFs
 and solana_etf_filings with known upcoming/pending filings.
 
 Usage:
@@ -161,6 +161,46 @@ ETFS = [
         "net_yield": "N/A",
         "description": "REX-Osprey SOL Staking ETF. Anchorage Digital custody. Approved and live.",
     },
+    {
+        "ticker": "SOEZ",
+        "issuer": "Franklin Templeton",
+        "exchange": "NYSE Arca",
+        "aum_usd": None,
+        "price_usd": None,
+        "price_source": "static",
+        "exp_ratio_current": "0.19%",
+        "exp_ratio_target": "0.19%",
+        "exp_waiver_note": "Fee waived through May 31, 2026 on first $5B AUM (expired)",
+        "fee_waived": False,
+        "staking_enabled": True,
+        "commission_current": "N/A",
+        "commission_target": "N/A",
+        "commission_note": "Staking commission not separately disclosed",
+        "pct_staked": "N/A",
+        "gross_yield": "~7.0%",
+        "net_yield": "N/A",
+        "description": "Launched Dec 3, 2025 on NYSE Arca. 0.19% management fee (waived through May 31, 2026 on first $5B AUM). Staking included. Tracks CF Benchmarks Solana Index.",
+    },
+    {
+        "ticker": "QSOL",
+        "issuer": "Invesco Galaxy",
+        "exchange": "Cboe BZX",
+        "aum_usd": None,
+        "price_usd": None,
+        "price_source": "static",
+        "exp_ratio_current": "0.25%",
+        "exp_ratio_target": "0.25%",
+        "exp_waiver_note": None,
+        "fee_waived": False,
+        "staking_enabled": True,
+        "commission_current": "N/A",
+        "commission_target": "N/A",
+        "commission_note": "Staking via Galaxy Digital Infrastructure; not separately disclosed",
+        "pct_staked": "N/A",
+        "gross_yield": "~7.0%",
+        "net_yield": "N/A",
+        "description": "Launched Dec 15, 2025 on Cboe BZX. 0.25% expense ratio. Staking via Galaxy Digital Infrastructure. Debuted with 17,500 SOL in custody. Tracks Lukka Prime Solana Reference Rate.",
+    },
 ]
 
 # ── Upcoming / pending filings ───────────────────────────────────────
@@ -171,13 +211,13 @@ FILINGS = [
         "etf_name": "Franklin Solana ETF",
         "ticker_proposed": "SOEZ",
         "filing_type": "S-1",
-        "status": "filed",
+        "status": "approved",
         "filing_date": "2025-03-12",
         "decision_deadline": None,
         "staking_included": True,
         "is_new": False,
-        "last_verified": "2026-03-30",
-        "notes": "S-1 filed Mar 2025. Includes staking. Proposed ticker SOEZ on Cboe BZX.",
+        "last_verified": "2026-06-17",
+        "notes": "S-1 filed Mar 2025. Launched Dec 3, 2025 on NYSE Arca as SOEZ. 0.19% expense ratio. Staking included. Fee waived through May 31, 2026 on first $5B AUM. Tracks CF Benchmarks Solana Index.",
     },
     {
         "issuer": "WisdomTree",
@@ -251,13 +291,13 @@ FILINGS = [
         "etf_name": "Invesco Galaxy Solana ETF",
         "ticker_proposed": "QSOL",
         "filing_type": "S-1",
-        "status": "filed",
+        "status": "approved",
         "filing_date": None,
         "decision_deadline": None,
-        "staking_included": None,
-        "is_new": True,
-        "last_verified": "2026-03-30",
-        "notes": "S-1 filed. Proposed ticker QSOL on Cboe BZX. Coinbase custody.",
+        "staking_included": True,
+        "is_new": False,
+        "last_verified": "2026-06-17",
+        "notes": "S-1 filed. Launched Dec 15, 2025 on Cboe BZX as QSOL. 0.25% expense ratio. Staking via Galaxy Digital Infrastructure. Debuted with 17,500 SOL in custody. Tracks Lukka Prime Solana Reference Rate.",
     },
     {
         "issuer": "Osprey Funds",
