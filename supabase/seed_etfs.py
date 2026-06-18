@@ -295,11 +295,11 @@ FILINGS = [
         "decision_deadline": None,
         "staking_included": False,
         "is_new": True,
-        "last_verified": "2026-04-16",
+        "last_verified": "2026-06-18",
         "notes": "Futures-based ETF (CME Group SOL futures). Launched on NASDAQ March 20, 2025. Expense ratio 0.95% (waived through Jun 30, 2026; 1.15% post-waiver). No staking. Registered as a 1940 Act fund (series of Volatility Shares Trust), not a commodity trust S-1.",
     },
     {
-        "issuer": "Volatility Shares (2x)",
+        "issuer": "Volatility Shares",
         "etf_name": "Volatility Shares 2x Solana ETF",
         "ticker_proposed": "SOLT",
         "filing_type": "485A",
@@ -308,7 +308,7 @@ FILINGS = [
         "decision_deadline": None,
         "staking_included": False,
         "is_new": True,
-        "last_verified": "2026-04-16",
+        "last_verified": "2026-06-18",
         "notes": "2x leveraged daily Solana futures ETF (CME Group SOL futures). Launched on NASDAQ March 20, 2025 alongside SOLZ. Expense ratio 1.85%. No staking. Not suitable as a long-term hold. Registered as a 1940 Act fund (series of Volatility Shares Trust).",
     },
 ]
