@@ -221,16 +221,16 @@ FILINGS = [
     {
         "issuer": "Morgan Stanley",
         "etf_name": "Morgan Stanley Solana Trust",
-        "ticker_proposed": None,
+        "ticker_proposed": "MSOL",
         "filing_type": "S-1",
         "status": "filed",
         "filing_date": "2026-01-06",
         "decision_deadline": None,
         "staking_included": True,
         "is_new": True,
-        "last_verified": "2026-03-30",
+        "last_verified": "2026-06-21",
         "sec_url": "https://www.sec.gov/Archives/edgar/data/2103547/000110465926000988/tm2534148d1_s1.htm",
-        "notes": "S-1 filed Jan 2026 via E*TRADE Capital Management. Includes staking.",
+        "notes": "S-1 filed Jan 2026. S-1/A Amendment No. 2 filed Jun 18, 2026. Proposed ticker MSOL on NYSE Arca. Fee: 0.14% (would be market's lowest). Staking: 95% of rewards reinvested. Staking providers: Figment, Galaxy Blockchain Infrastructure, Coinbase Canada. Still pending SEC review.",
     },
     {
         "issuer": "CoinShares",
@@ -282,8 +282,8 @@ FILINGS = [
         "decision_deadline": None,
         "staking_included": True,
         "is_new": True,
-        "last_verified": "2026-03-30",
-        "notes": "LST-based Solana ETF using Jito liquid staking token. Separate from VSOL spot ETF.",
+        "last_verified": "2026-06-21",
+        "notes": "LST-based Solana ETF using Jito liquid staking token. Separate from VSOL spot ETF. Nasdaq filed 19b-4 (proposed rule change) Feb 27, 2026; Federal Register notice published Mar 20, 2026. Pending SEC review.",
     },
 ]
 
