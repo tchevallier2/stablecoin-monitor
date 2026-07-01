@@ -228,9 +228,9 @@ FILINGS = [
         "decision_deadline": None,
         "staking_included": True,
         "is_new": True,
-        "last_verified": "2026-05-23",
+        "last_verified": "2026-07-01",
         "sec_url": "https://www.sec.gov/Archives/edgar/data/2103547/000110465926000988/tm2534148d1_s1.htm",
-        "notes": "S-1 filed Jan 6 2026 via E*TRADE Capital Management. S-1/A filed May 20 2026: proposed ticker MSOL on NYSE Arca, up to 100% staking, custodians BNY Mellon + Coinbase Custody.",
+        "notes": "S-1 filed Jan 6 2026 via E*TRADE Capital Management. S-1/A (May 20 2026): proposed ticker MSOL on NYSE Arca, up to 100% staking, custodians BNY Mellon + Coinbase Custody. S-1/A (Jun 18 2026): 0.14% sponsor fee proposed (lowest-cost Solana ETF if approved), 95% of staking rewards to shareholders.",
     },
     {
         "issuer": "CoinShares",
