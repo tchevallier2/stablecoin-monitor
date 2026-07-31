@@ -1,6 +1,6 @@
 """
 Seed script for Solana ETF tables.
-Populates solana_etfs with the 6 live US-listed Solana ETFs
+Populates solana_etfs with live US-listed Solana ETFs
 and solana_etf_filings with known upcoming/pending filings.
 
 Usage:
@@ -18,7 +18,7 @@ SUPABASE_KEY = os.environ["SUPABASE_SERVICE_ROLE_KEY"]
 
 supabase = create_client(SUPABASE_URL, SUPABASE_KEY)
 
-# ── Live ETFs (data sourced from issuer sites, Mar 28 2026) ──────────
+# ── Live ETFs (last updated Jul 31 2026) ─────────────────────────────
 
 ETFS = [
     {
@@ -48,18 +48,18 @@ ETFS = [
         "aum_usd": 195_320_000,
         "price_usd": 6.15,
         "price_source": "static",
-        "exp_ratio_current": "0.35%",
-        "exp_ratio_target": "0.35%",
-        "exp_waiver_note": "Waiver expired Feb 5, 2026",
+        "exp_ratio_current": "0.19%",
+        "exp_ratio_target": "0.19%",
+        "exp_waiver_note": "Sponsor fee cut from 0.35% to 0.19% effective Jun 25, 2026",
         "fee_waived": False,
         "staking_enabled": True,
-        "commission_current": "5%",
-        "commission_target": "5%",
-        "commission_note": "Reduced from 23% to 5% on Nov 5, 2025",
+        "commission_current": "7%",
+        "commission_target": "7%",
+        "commission_note": "Staking fee reduced from 23% to 7% effective Jun 25, 2026",
         "pct_staked": "100%",
         "gross_yield": "7.01%",
-        "net_yield": "5.63%",
-        "description": "Formerly Grayscale Solana Trust; converted to ETF Jan 5, 2026. 5% commission on staking rewards (reduced from 23%).",
+        "net_yield": "N/A",
+        "description": "Renamed Grayscale Solana Staking ETF (Jan 5, 2026). Fee cuts effective Jun 25, 2026: sponsor fee 0.19%, staking fee 7%. Planning quarterly cash staking distributions (~Aug 2026).",
     },
     {
         "ticker": "FSOL",
@@ -108,18 +108,18 @@ ETFS = [
         "aum_usd": 29_980_000,
         "price_usd": 8.00,
         "price_source": "static",
-        "exp_ratio_current": "0.21%",
+        "exp_ratio_current": "0% (waived)",
         "exp_ratio_target": "0.21%",
-        "exp_waiver_note": None,
-        "fee_waived": False,
+        "exp_waiver_note": "12-month sponsor fee waiver Jul 28 2026 – Jul 27 2027",
+        "fee_waived": True,
         "staking_enabled": True,
         "commission_current": "N/A",
         "commission_target": "N/A",
-        "commission_note": "Distributes rewards to shareholders monthly",
+        "commission_note": "Distributes rewards to shareholders monthly; net staking yield ~4.29% as of Jul 20, 2026",
         "pct_staked": "99.77%",
         "gross_yield": "~7.0%",
-        "net_yield": "~6.7%",
-        "description": "Distributes staking rewards monthly ($0.016962/share in Mar 2026). 99.77% utilization rate. CME CF Solana-Dollar Reference Rate.",
+        "net_yield": "~4.29%",
+        "description": "Distributes staking rewards monthly ($0.016962/share in Mar 2026). 99.77% utilization rate. CME CF Solana-Dollar Reference Rate. 0.21% fee waived through Jul 27, 2027.",
     },
     {
         "ticker": "SOLC",
@@ -161,6 +161,26 @@ ETFS = [
         "net_yield": "N/A",
         "description": "REX-Osprey SOL Staking ETF. Anchorage Digital custody. Approved and live.",
     },
+    {
+        "ticker": "MSOL",
+        "issuer": "Morgan Stanley",
+        "exchange": "NYSE Arca",
+        "aum_usd": None,
+        "price_usd": None,
+        "price_source": "static",
+        "exp_ratio_current": "0.14%",
+        "exp_ratio_target": "0.14%",
+        "exp_waiver_note": None,
+        "fee_waived": False,
+        "staking_enabled": True,
+        "commission_current": "≤5%",
+        "commission_target": "≤5%",
+        "commission_note": "Staking fees capped at 5%; most rewards passed to investors",
+        "pct_staked": "100% (target)",
+        "gross_yield": "N/A",
+        "net_yield": "N/A",
+        "description": "Launched Jul 28, 2026. Lowest-cost Solana ETF at 0.14% fee. 100% of SOL staked via Figment, Galaxy Digital, Coinbase Canada. Staking fees capped at 5%. Tracks CoinDesk Solana Benchmark 4PM NY Settlement Rate.",
+    },
 ]
 
 # ── Upcoming / pending filings ───────────────────────────────────────
@@ -171,13 +191,13 @@ FILINGS = [
         "etf_name": "Franklin Solana ETF",
         "ticker_proposed": "SOEZ",
         "filing_type": "S-1",
-        "status": "filed",
+        "status": "launched",
         "filing_date": "2025-03-12",
         "decision_deadline": None,
         "staking_included": True,
         "is_new": False,
-        "last_verified": "2026-03-30",
-        "notes": "S-1 filed Mar 2025. Includes staking. Proposed ticker SOEZ on Cboe BZX.",
+        "last_verified": "2026-07-31",
+        "notes": "Launched Dec 2025 on NYSE Arca as SOEZ. 0.19% management fee; both fee and staking commission waived through May 31, 2026 on first $5B AUM. Coinbase Custody; BNY Mellon as administrator. S-1 originally filed Mar 2025.",
     },
     {
         "issuer": "WisdomTree",
@@ -221,16 +241,16 @@ FILINGS = [
     {
         "issuer": "Morgan Stanley",
         "etf_name": "Morgan Stanley Solana Trust",
-        "ticker_proposed": None,
+        "ticker_proposed": "MSOL",
         "filing_type": "S-1",
-        "status": "filed",
+        "status": "launched",
         "filing_date": "2026-01-06",
         "decision_deadline": None,
         "staking_included": True,
         "is_new": True,
-        "last_verified": "2026-03-30",
+        "last_verified": "2026-07-31",
         "sec_url": "https://www.sec.gov/Archives/edgar/data/2103547/000110465926000988/tm2534148d1_s1.htm",
-        "notes": "S-1 filed Jan 2026 via E*TRADE Capital Management. Includes staking.",
+        "notes": "Launched Jul 28, 2026 on NYSE Arca as MSOL. 0.14% management fee (lowest on market). 100% SOL staked via Figment, Galaxy Digital, Coinbase Canada; staking fees capped at 5%. 8-A registration auto-effective Jul 24, 2026. S-1 originally filed Jan 6, 2026 via E*TRADE Capital Management.",
     },
     {
         "issuer": "CoinShares",
@@ -251,13 +271,13 @@ FILINGS = [
         "etf_name": "Invesco Galaxy Solana ETF",
         "ticker_proposed": "QSOL",
         "filing_type": "S-1",
-        "status": "filed",
+        "status": "launched",
         "filing_date": None,
         "decision_deadline": None,
-        "staking_included": None,
-        "is_new": True,
-        "last_verified": "2026-03-30",
-        "notes": "S-1 filed. Proposed ticker QSOL on Cboe BZX. Coinbase custody.",
+        "staking_included": True,
+        "is_new": False,
+        "last_verified": "2026-07-31",
+        "notes": "Launched Dec 2025 on Cboe BZX as QSOL. 0.25% expense ratio. Coinbase custody; staking via Galaxy. Tracks Lukka Prime Solana Reference Rate.",
     },
     {
         "issuer": "Osprey Funds",
@@ -281,9 +301,9 @@ FILINGS = [
         "filing_date": None,
         "decision_deadline": None,
         "staking_included": True,
-        "is_new": True,
-        "last_verified": "2026-03-30",
-        "notes": "LST-based Solana ETF using Jito liquid staking token. Separate from VSOL spot ETF.",
+        "is_new": False,
+        "last_verified": "2026-07-31",
+        "notes": "LST-based Solana ETF using Jito liquid staking token (JitoSOL). Separate from VSOL spot ETF. Nasdaq filed 19b-4. SEC instituted proceedings to determine whether to approve or disapprove on Jun 23, 2026 (Federal Register 2026-12519). Still pending.",
     },
 ]
 
