@@ -230,7 +230,7 @@ FILINGS = [
         "is_new": True,
         "last_verified": "2026-08-20",
         "sec_url": "https://www.sec.gov/Archives/edgar/data/2103547/000110465926000988/tm2534148d1_s1.htm",
-        "notes": "S-1 filed Jan 2026 via E*TRADE Capital Management. Launched July 28, 2026 on NYSE Arca as MSOL. 0.14% expense ratio. Passes 95% of staking rewards to shareholders. Staking providers: Figment, Galaxy, Coinbase Canada (fees capped at 5%). Issuer retains no staking income.",
+        "notes": "S-1 filed Jan 2026 via E*TRADE Capital Management. Launched Jul 28, 2026 on NYSE Arca as MSOL. 0.14% expense ratio (lowest in class). 100% SOL staked; 95% of rewards distributed to shareholders. Staking via Figment, Galaxy Blockchain Infrastructure, Coinbase Canada (max 5% service fee). Issuer retains no staking income.",
     },
     {
         "issuer": "CoinShares",
