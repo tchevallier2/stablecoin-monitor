@@ -18,14 +18,14 @@ SUPABASE_KEY = os.environ["SUPABASE_SERVICE_ROLE_KEY"]
 
 supabase = create_client(SUPABASE_URL, SUPABASE_KEY)
 
-# ── Live ETFs (data sourced from issuer sites, Aug 10 2026) ──────────
+# ── Live ETFs (data sourced from issuer sites, Aug 24 2026) ──────────
 
 ETFS = [
     {
         "ticker": "BSOL",
         "issuer": "Bitwise",
         "exchange": "NYSE Arca",
-        "aum_usd": 596_200_000,
+        "aum_usd": 730_000_000,
         "price_usd": 11.07,
         "price_source": "static",
         "exp_ratio_current": "0.20%",
@@ -37,8 +37,8 @@ ETFS = [
         "commission_target": "6%",
         "commission_note": "6% commission on staking rewards",
         "pct_staked": "99%",
-        "gross_yield": "6.76%",
-        "net_yield": "6.36%",
+        "gross_yield": "6.20%",
+        "net_yield": "5.83%",
         "description": "Reinvests staking rewards (no distribution). Uses Helius / Bitwise Onchain Solutions validator. 6% commission on staking rewards.",
     },
     {
@@ -236,7 +236,7 @@ FILINGS = [
         "decision_deadline": None,
         "staking_included": True,
         "is_new": False,
-        "last_verified": "2026-08-10",
+        "last_verified": "2026-08-24",
         "notes": "Approved and live. Launched Dec 3, 2025 on NYSE Arca as SOEZ. 0.19% expense ratio. Fee waiver through May 31, 2026 on first $5B expired.",
     },
     {
@@ -249,7 +249,7 @@ FILINGS = [
         "decision_deadline": None,
         "staking_included": None,
         "is_new": False,
-        "last_verified": "2026-08-10",
+        "last_verified": "2026-08-24",
         "notes": "S-1 filed Mar 2025. No status update found as of Aug 2026.",
     },
     {
@@ -262,7 +262,7 @@ FILINGS = [
         "decision_deadline": None,
         "staking_included": None,
         "is_new": False,
-        "last_verified": "2026-08-10",
+        "last_verified": "2026-08-24",
         "notes": "S-1 filed Jun 2025. Also has live leveraged futures ETF (SLON). Spot ETF still pending as of Aug 2026.",
     },
     {
@@ -275,7 +275,7 @@ FILINGS = [
         "decision_deadline": None,
         "staking_included": True,
         "is_new": False,
-        "last_verified": "2026-08-10",
+        "last_verified": "2026-08-24",
         "notes": "Approved. Live on Cboe BZX as SSK. 0.75% expense ratio. Anchorage Digital custody. AUM ~$84.2M as of Aug 2026.",
     },
     {
@@ -288,7 +288,7 @@ FILINGS = [
         "decision_deadline": None,
         "staking_included": True,
         "is_new": True,
-        "last_verified": "2026-08-10",
+        "last_verified": "2026-08-24",
         "sec_url": "https://www.sec.gov/Archives/edgar/data/2103547/000110465926000988/tm2534148d1_s1.htm",
         "notes": "Approved. Launched July 28, 2026 on NYSE Arca as MSOL. 0.14% expense ratio (lowest-cost US Solana ETF). Staking via Figment, Galaxy Digital Infrastructure, Coinbase Canada; up to 5% staking commission.",
     },
@@ -302,7 +302,7 @@ FILINGS = [
         "decision_deadline": None,
         "staking_included": None,
         "is_new": True,
-        "last_verified": "2026-08-10",
+        "last_verified": "2026-08-24",
         "sec_url": "https://www.sec.gov/Archives/edgar/data/2073298/000199937125014084/solana-s1a_092625.htm",
         "notes": "S-1 withdrawn Nov 28, 2025 via Form RW. Planned listing on Nasdaq. Coinbase & BitGo custody.",
     },
@@ -316,7 +316,7 @@ FILINGS = [
         "decision_deadline": None,
         "staking_included": True,
         "is_new": True,
-        "last_verified": "2026-08-10",
+        "last_verified": "2026-08-24",
         "notes": "Approved. Launched Dec 15, 2025 on Cboe BZX as QSOL. 0.25% expense ratio. Staking via Galaxy Digital Infrastructure. Coinbase custody. AUM ~$5.98M.",
     },
     {
@@ -329,7 +329,7 @@ FILINGS = [
         "decision_deadline": None,
         "staking_included": None,
         "is_new": True,
-        "last_verified": "2026-08-10",
+        "last_verified": "2026-08-24",
         "notes": "S-1 filed. Proposed ticker OSOL on Cboe BZX. Coinbase custody. Separate from REX-Osprey joint filing.",
     },
     {
@@ -342,7 +342,7 @@ FILINGS = [
         "decision_deadline": None,
         "staking_included": True,
         "is_new": True,
-        "last_verified": "2026-08-10",
+        "last_verified": "2026-08-24",
         "notes": "LST-based Solana ETF using Jito liquid staking token. In SEC exchange review phase as of Aug 2026. Separate from VSOL spot ETF.",
     },
 ]
