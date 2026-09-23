@@ -285,6 +285,19 @@ FILINGS = [
         "last_verified": "2026-03-30",
         "notes": "LST-based Solana ETF using Jito liquid staking token. Separate from VSOL spot ETF.",
     },
+    {
+        "issuer": "Amplify ETFs",
+        "etf_name": "Amplify Solana 3% Monthly Option Income ETF",
+        "ticker_proposed": "SOLM",
+        "filing_type": "485BPOS",
+        "status": "approved",
+        "filing_date": "2025-11-04",
+        "decision_deadline": None,
+        "staking_included": False,
+        "is_new": True,
+        "last_verified": "2026-09-23",
+        "notes": "Launched Nov 4, 2025 on Cboe BZX. Covered call strategy targeting ~3% monthly (36% annual) option income on Solana exposure. Expense ratio 0.75%. Registered investment company (not a statutory trust); filed 485BPOS rather than S-1.",
+    },
 ]
 
 
