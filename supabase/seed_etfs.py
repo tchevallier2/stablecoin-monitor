@@ -18,7 +18,7 @@ SUPABASE_KEY = os.environ["SUPABASE_SERVICE_ROLE_KEY"]
 
 supabase = create_client(SUPABASE_URL, SUPABASE_KEY)
 
-# ── Live ETFs (data sourced from issuer sites, Sep 7 2026) ──────────
+# ── Live ETFs (data sourced from issuer sites, Sep 28 2026) ──────────
 
 ETFS = [
     {
@@ -145,7 +145,7 @@ ETFS = [
         "ticker": "SSK",
         "issuer": "REX-Osprey",
         "exchange": "Cboe BZX",
-        "aum_usd": None,
+        "aum_usd": 84_210_000,
         "price_usd": None,
         "price_source": "static",
         "exp_ratio_current": "0.75%",
@@ -236,7 +236,7 @@ FILINGS = [
         "decision_deadline": None,
         "staking_included": True,
         "is_new": False,
-        "last_verified": "2026-09-07",
+        "last_verified": "2026-09-28",
         "notes": "Approved and live. Launched Dec 3, 2025 on NYSE Arca as SOEZ. 0.19% expense ratio. Fee waiver on first $5B AUM expired May 31, 2026.",
     },
     {
@@ -249,7 +249,7 @@ FILINGS = [
         "decision_deadline": None,
         "staking_included": None,
         "is_new": False,
-        "last_verified": "2026-09-07",
+        "last_verified": "2026-09-28",
         "notes": "S-1 filed Mar 2025. Still pending as of Sep 2026. (SOLW is a separate European ETP.)",
     },
     {
@@ -262,7 +262,7 @@ FILINGS = [
         "decision_deadline": None,
         "staking_included": None,
         "is_new": False,
-        "last_verified": "2026-09-07",
+        "last_verified": "2026-09-28",
         "notes": "Spot Solana S-1 still pending as of Sep 2026. Also has live leveraged futures ETF (SLON).",
     },
     {
@@ -275,8 +275,8 @@ FILINGS = [
         "decision_deadline": None,
         "staking_included": True,
         "is_new": False,
-        "last_verified": "2026-09-07",
-        "notes": "Approved. Live on Cboe BZX as SSK. 0.75% expense ratio. Anchorage Digital custody.",
+        "last_verified": "2026-09-28",
+        "notes": "Approved. Live on Cboe BZX as SSK since Jul 2, 2025. 0.75% expense ratio. Anchorage Digital custody. AUM ~$84M as of Sep 2026.",
     },
     {
         "issuer": "Morgan Stanley",
@@ -288,7 +288,7 @@ FILINGS = [
         "decision_deadline": None,
         "staking_included": True,
         "is_new": True,
-        "last_verified": "2026-09-07",
+        "last_verified": "2026-09-28",
         "sec_url": "https://www.sec.gov/Archives/edgar/data/2103547/000110465926000988/tm2534148d1_s1.htm",
         "notes": "Approved and live. NYSE Arca certified Jul 24, 2026; launched Jul 28, 2026 as MSOL. 0.14% expense ratio (lowest-cost Solana ETF). Stakes 100% of SOL.",
     },
@@ -302,7 +302,7 @@ FILINGS = [
         "decision_deadline": None,
         "staking_included": None,
         "is_new": True,
-        "last_verified": "2026-09-07",
+        "last_verified": "2026-09-28",
         "sec_url": "https://www.sec.gov/Archives/edgar/data/2073298/000199937125014084/solana-s1a_092625.htm",
         "notes": "S-1/A filed. Still pending as of Sep 2026. Planned listing on Nasdaq. Coinbase & BitGo custody.",
     },
@@ -316,7 +316,7 @@ FILINGS = [
         "decision_deadline": None,
         "staking_included": True,
         "is_new": True,
-        "last_verified": "2026-09-07",
+        "last_verified": "2026-09-28",
         "notes": "Approved and live. Launched Dec 15, 2025 on Cboe BZX as QSOL. 0.25% expense ratio. Coinbase custody.",
     },
     {
@@ -329,7 +329,7 @@ FILINGS = [
         "decision_deadline": None,
         "staking_included": None,
         "is_new": True,
-        "last_verified": "2026-09-07",
+        "last_verified": "2026-09-28",
         "notes": "Underlying Osprey Solana Trust (OSOL) liquidated Jul 15, 2026. ETF conversion plan abandoned. Separate from REX-Osprey joint SSK filing.",
     },
     {
@@ -342,8 +342,8 @@ FILINGS = [
         "decision_deadline": None,
         "staking_included": True,
         "is_new": True,
-        "last_verified": "2026-09-07",
-        "notes": "LST-based Solana ETF using Jito liquid staking token. Still pending as of Apr 2026. Separate from VSOL spot ETF.",
+        "last_verified": "2026-09-28",
+        "notes": "LST-based Solana ETF using Jito liquid staking token. Still pending as of Sep 2026. Separate from VSOL spot ETF.",
     },
 ]
 
