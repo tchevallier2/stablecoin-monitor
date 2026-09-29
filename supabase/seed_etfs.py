@@ -287,16 +287,16 @@ FILINGS = [
     },
     {
         "issuer": "Volatility Shares",
-        "etf_name": "Volatility Shares Solana ETF",
-        "ticker_proposed": "SOLZ",
+        "etf_name": "Volatility Shares Solana ETF / 2x Solana ETF",
+        "ticker_proposed": "SOLZ / SOLT",
         "filing_type": "485BPOS",
         "status": "approved",
-        "filing_date": "2025-03-20",
+        "filing_date": "2025-03-14",
         "decision_deadline": None,
         "staking_included": False,
         "is_new": True,
         "last_verified": "2026-09-29",
-        "notes": "Futures-based 1x Solana ETF using CME SOL futures contracts. Launched March 20, 2025 on NASDAQ. Management fee 0.95% (raised to 1.15% after June 30, 2026). Also has 2x leveraged sister fund SOLT (1.85% fee, same launch date). Not a spot ETF — no direct SOL holdings or staking.",
+        "notes": "Two futures-based Solana ETFs using CME SOL futures (not spot). SOLZ (1x, 0.95% ER, raised to 1.15% after June 30, 2026) and SOLT (2x leveraged, 1.85% ER). Both live on NASDAQ since Mar 19, 2025. No staking. SEC Form 8-A12B filed Mar 13, 2025.",
     },
 ]
 
